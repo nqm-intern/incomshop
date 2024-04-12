@@ -308,5 +308,18 @@ header {
     grid-auto-flow: column;
   }
 
-  
+  .nav-menu {
+    position: relative;
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    margin-top: 0;
+    left: 0;
+  }
+
+  .nav-menu > li {
+    height: 2em !important;
+  }
 }
