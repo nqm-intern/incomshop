@@ -309,6 +309,7 @@ header {
   }
 
   .nav-menu {
+    display: grid;
     position: relative;
     transform: none;
     -webkit-transform: none;
@@ -317,6 +318,9 @@ header {
     -o-transform: none;
     margin-top: 0;
     left: 0;
+    width: auto;
+    grid-auto-columns: auto;
+    grid-auto-flow: column;
   }
 
   .nav-menu > li {
