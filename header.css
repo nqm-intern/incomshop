@@ -323,11 +323,17 @@ header {
     grid-auto-flow: column;
   }
 
-  #nav-menu li {
+  #nav-menu > li {
     height: 2em !important;
   }
 
-  #nav-menu li:not(:last-child) {
+  #nav-menu > li:not(:last-child) {
     border-right: 2px solid var(--seperator);
+  }
+
+  #nav-menu > li:hover .dropdown-child {
+    display: block;
+    position: relative;
+
   }
 }
