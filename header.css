@@ -303,12 +303,12 @@ header {
   }
 
   .menu {
-    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-columns: auto;
     grid-auto-columns: auto;
     grid-auto-flow: column;
   }
 
-  .nav-menu {
+  #nav-menu {
     display: grid;
     position: relative;
     transform: none;
@@ -323,7 +323,11 @@ header {
     grid-auto-flow: column;
   }
 
-  .nav-menu > li {
+  #nav-menu li {
     height: 2em !important;
+  }
+
+  #nav-menu li:not(:last-child) {
+    border-right: 2px solid var(--seperator);
   }
 }
