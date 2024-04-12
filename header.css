@@ -324,7 +324,7 @@ header {
   }
 
   #nav-menu > li {
-    height: 3em !important;
+    height: 2em !important;
   }
 
   #nav-menu > li:not(:last-child) {
