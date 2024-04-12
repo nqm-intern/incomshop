@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$page.title}></title>
+<meta name="description" content="<{$page.description}>">
+<link rel="canonical" href="<{$page.canonical_url}>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="<{$page.title}>">
+<meta property="og:description" content="<{$page.description}>">
+<meta property="og:site_name" content="<{$shop.name}>">
+<meta name="twitter:card" content="Summary with Large Image">
+<link rel="shortcut icon" type="image/ico" href="<{$shop.favicon_url}>">
+<link rel="stylesheet" href="<{$page.css}>">
+<{$makeshop.head}>
+</head>
+
+<body class="top">
+<{$makeshop.body_top}>
+
+    <div class="wrapper">
+        <{$module.header}>
+
+        <{if $shop.mainvisual}>
+            <div class="main-visual"><{$shop.mainvisual}></div>
+        <{/if}>
+
+        <{$module.infobar}>
+		
+        <div class="contents-area">
+            <div class="sidemenu-wrap">
+                <{$module.side_bar}>
+            </div>
+            <div class="main-wrap">
+                <main class="main">
+                    <{if $special_item.has_item}>
+                        <div class="main-display">
+                            <div class="main-title">
+                                <div class="main-text">セール | 数量限定特価</div>
+                            </div>
+                            <div class="main-product">
+                                <div class="product-grid grid-view">
+                                    <{section name=i loop=$special_item.list max=12}>
+                                      <div class="product-card">
+                                        <div class="product-icon">
+                                          <img src="<{$special_item.list[i].image_M}>"
+                                            alt="<{$special_item.list[i].name}>" />
+                                        </div>
+                                        <{if $special_item.list[i].is_sale}>
+                                          <div class="product-sale">
+                                            <img src="https://gigaplus.makeshop.jp/incomshop/shared-img/top-sale.png" alt="sale">
+                                          </div>
+                                        <{ /if}>
+                                        <div class="product-title">
+                                          <{$special_item.list[i].name}>
+                                        </div>
+                                        <div class="product-ocode">
+                                          <{$special_item.list[i].original_code}>
+                                        </div>
+                                        <div class="product-stock">
+                                          在庫：<{$special_item.list[i].stock_quantity}>
+                                        </div>
+                                        <div class="product-price">
+                                          ￥<{$special_item.list[i].price|number_format}>（税込）
+                                        </div>
+                                      </div>
+                                      <{ /section}>
+                                  </div>
+                            </div>
+                        </div>
+                    <{/if}>
+                    <div class="main-display">
+                        <div class="main-title">
+                            <div class="main-text">おすすめ商品</div>
+                        </div>
+                          <div class="main-product">
+                            <div class="product-grid grid-view">
+                              <{section name=i loop=$recommend_item.list max=12}>
+                                <div class="product-card">
+                                  <div class="product-icon">
+                                    <img src="<{$recommend_item.list[i].image_M}>"
+                                      alt="<{$recommend_item.list[i].name}>" />
+                                  </div>
+                                  <{if $recommend_item.list[i].is_sale}>
+                                    <div class="product-sale">
+                                      <img src="https://gigaplus.makeshop.jp/incomshop/shared-img/top-sale.png" alt="sale">
+                                    </div>
+                                  <{ /if}>
+                                  <div class="product-title">
+                                    <{$recommend_item.list[i].name}>
+                                  </div>
+                                  <div class="product-ocode">
+                                    <{$recommend_item.list[i].original_code}>
+                                  </div>
+                                  <div class="product-stock">
+                                    在庫：<{$recommend_item.list[i].stock_quantity}>
+                                  </div>
+                                  <div class="product-price">
+                                    ￥<{$recommend_item.list[i].price|number_format}>（税込）
+                                  </div>
+                                </div>
+                                <{ /section}>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="main-display">
+                        <div class="main-title">
+                            <div class="main-text">NEW | 新着商品</div>
+                        </div>
+                        <div class="main-product">
+                            <div class="product-grid grid-view">
+                                <{section name=i loop=$new_item.list max=12}>
+                                    <div class="product-card">
+                                        <div class="product-icon">
+                                        <img src="<{$new_item.list[i].image_M}>"
+                                            alt="<{$new_item.list[i].name}>" />
+                                        </div>
+                                        <{if $new_item.list[i].is_sale}>
+                                        <div class="product-sale">
+                                            <img src="https://gigaplus.makeshop.jp/incomshop/shared-img/top-sale.png" alt="sale">
+                                        </div>
+                                        <{ /if}>
+                                        <div class="product-title">
+                                          <{$new_item.list[i].name}>
+                                        </div>
+                                        <div class="product-ocode">
+                                          <{$new_item.list[i].original_code}>
+                                        </div>
+                                        <div class="product-stock">
+                                          在庫：<{$new_item.list[i].stock_quantity}>
+                                        </div>
+                                        <div class="product-price">
+                                          ￥<{$new_item.list[i].price|number_format}>（税込）
+                                        </div>
+                                    </div>
+                                <{/section}>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+            
+        <{$module.footer}>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="<{$page.javascript}>"></script>
+<{$makeshop.body_bottom}>
+</body>
+</html>

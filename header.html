@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="header.css">
+<script src="https://kit.fontawesome.com/675d73d547.js" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<header>
+    <div class="logo">
+        <{if $shop.logo_url}>
+            <img src="<{$shop.logo_url}>" alt="<{$shop.name}>">
+        <{else}>
+            <{$shop.name}>
+        <{/if}>
+    </div>
+    <div class="acc-nav">
+        <div class="container">
+            <div class="acc-nav-img">
+                <i class="fa-classic fa-user fa-2x"></i>
+            </div>
+            <div class="acc-nav-name">マイページ</div>
+            <a class="grid-link" href="<{$url.mypage}>"></a>
+        </div>
+        <div class="container">
+            <div class="acc-nav-img">
+                <i class="fa-solid fa-history fa-2x"></i>
+            </div>
+            <div class="acc-nav-name">注文履歴</div>
+            <a class="grid-link" href="<{$url.order_history}>"></a>
+        </div>
+        <div class="container">
+            <div class="acc-nav-img">
+                <i class="fa-solid fa-shopping-cart fa-2x"></i>
+            </div>
+            <div class="acc-nav-name">カート</div>
+            <a class="grid-link" href="<{$url.cart}>"></a>
+        </div>
+    </div>
+    <!-- <div class="help">
+        <div class="container">
+            <div class="help-name">ヘルプ</div>
+            <a href="<{$url.guide}>" class="grid-link"></a>
+        </div>  
+    </div> -->
+    <div class="searchbar">
+        <div class="container">
+            <input type="text" data-id="<{$search_form.keyword_id}>" placeholder="キーワードを入力"
+                onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()">
+            <a class="searchbtn" type="submit" id="btnSearch" href="<{$search_form.search_url}>">
+                <i class="fa fa-search"></i>
+            </a>
+        </div>
+    </div>
+    <div class="main-nav">
+        <div class="container">
+            <nav class="nav-bar">
+                <div class="menu">
+                    <div class="nav-name">Top</div>
+                    <input type="checkbox" id="menu-toggle">
+                    <label class="menu-btn-container" for="menu-toggle">
+                        <div class="menu-btn"></div>
+                    </label>
+                    <{if $category_menu.has_item}>
+                    <ul class="nav-menu" id="nav-menu">
+                        <{section name=i start=14 max=7 loop=$category_menu.list}>
+                        <li class="nav-dropdown">
+                            <div class="nav-img">
+                                <img src="https://gigaplus.makeshop.jp/incomshop/category/<{$category_menu.list[i].code}>.webp" alt="">
+                            </div>
+                            <div class="nav-name"><{$category_menu.list[i].name}></div>
+                            <a class="grid-link" href="<{$category_menu.list[i].url}>" title="<{$category_menu.list[i].name}>"></a>
+                            <{if $category_menu.list[i].child_category.has_item}>
+                                <ul class="dropdown-child">
+                                    <{section name=j loop=$category_menu.list[i].child_category.list}>
+                                    <li class="dropdown-content">
+                                        <a href="<{$category_menu.list[i].child_category.list[j].url}>">
+                                            <div class="nav-name"><{$category_menu.list[i].child_category.list[j].name}></div>
+                                        </a>
+                                        <{if $category_menu.list[i].child_category.list[j].child_category.list}>
+                                            <ul class="dropdown-child-child">
+                                                <{section name=k loop=$category_menu.list[i].child_category.list[j].child_category.list}>
+                                                <li class="dropdown-content">
+                                                    <a href="<{$category_menu.list[i].child_category.list[j].child_category.list[k].url}>">
+                                                        <div class="nav-name"><{$category_menu.list[i].child_category.list[j].child_category.list[k].name}></div>
+                                                    </a>
+                                                </li>
+                                                <{/section}>
+                                            </ul>
+                                        <{/if}>
+                                    </li>
+                                    <{/section}>
+                                </ul>
+                            <{/if}>
+                        </li>
+                        <{/section}>
+                    </ul>
+                    <{/if}>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
