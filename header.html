@@ -69,16 +69,14 @@
                                 <ul class="dropdown-child">
                                     <{section name=j loop=$category_menu.list[i].child_category.list}>
                                     <li class="dropdown-content">
-                                        <a href="<{$category_menu.list[i].child_category.list[j].url}>">
-                                            <div class="nav-name"><{$category_menu.list[i].child_category.list[j].name}></div>
-                                        </a>
+                                        <div class="nav-name"><{$category_menu.list[i].child_category.list[j].name}></div>
+                                        <a class="grid-link" href="<{$category_menu.list[i].child_category.list[j].url}>"></a>
                                         <{if $category_menu.list[i].child_category.list[j].child_category.list}>
                                             <ul class="dropdown-child-child">
                                                 <{section name=k loop=$category_menu.list[i].child_category.list[j].child_category.list}>
                                                 <li class="dropdown-content">
-                                                    <a href="<{$category_menu.list[i].child_category.list[j].child_category.list[k].url}>">
-                                                        <div class="nav-name"><{$category_menu.list[i].child_category.list[j].child_category.list[k].name}></div>
-                                                    </a>
+                                                    <div class="nav-name"><{$category_menu.list[i].child_category.list[j].child_category.list[k].name}></div>
+                                                    <a class="grid-link" href="<{$category_menu.list[i].child_category.list[j].child_category.list[k].url}>"></a>
                                                 </li>
                                                 <{/section}>
                                             </ul>
