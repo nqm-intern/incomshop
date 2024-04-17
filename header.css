@@ -332,8 +332,21 @@ header {
   }
 
   #nav-menu > li:hover .dropdown-child {
-    display: block;
+    display: inline-block;
     position: relative;
-    
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    max-width: fit-content;
+    z-index: 5;
+  }
+
+  .dropdown-child-child {
+    display: none;
+    position: absolute;
+    max-width: fit-content;
+    z-index: inherit;
   }
 }
