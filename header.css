@@ -413,7 +413,7 @@ header {
     -moz-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
     -ms-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
     -o-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
-}
+  }
 
   .nav-dropdown:hover .dropdown-content:first-child {
     border-top: none;
