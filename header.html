@@ -45,14 +45,14 @@
         <div class="container">
             <nav class="nav-bar">
                 <div class="menu">
-                    <div class="nav-name">Top</div>
+                    <div class="nav-name">Menu</div>
                     <input type="checkbox" id="menu-toggle">
                     <label class="menu-btn-container" for="menu-toggle">
                         <div class="menu-btn"></div>
                     </label>
                     <{if $category_menu.has_item}>
                     <ul class="nav-menu" id="nav-menu">
-                        <{section name=i start=14 max=7 loop=$category_menu.list}>
+                        <{section name=i start=14 max=5 loop=$category_menu.list}>
                         <li class="nav-dropdown">
                             <div class="nav-img">
                                 <img src="https://gigaplus.makeshop.jp/incomshop/category/<{$category_menu.list[i].code}>.webp" alt="">

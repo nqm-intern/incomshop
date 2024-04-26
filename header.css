@@ -187,6 +187,7 @@ header {
   margin: 0;
   padding: 0.5em 0;
   background-color: var(--nav-bar);
+  overflow: hidden;
 }
 
 .menu-btn-container {
@@ -296,19 +297,17 @@ header {
   display: none;
 }
 
-@media screen and (max-width:768px) {
-  .nav-menu > li {
-    overflow: hidden;
-  }
-}
-
 @media screen and (min-width:768px) {
+  .nav-menu > li {
+    overflow: unset;
+  }
+
   .menu-btn-container {
     display: none;
   }
 
   .menu {
-    grid-template-columns: auto;
+    grid-template-columns: min-content;
     grid-auto-columns: auto;
     grid-auto-flow: column;
   }
@@ -326,13 +325,14 @@ header {
     display: none;
     position: absolute;
     top: 0;
-    right: 0;
+    left: 170px;
     min-width: 160px;
     z-index: inherit;
   }
 
   .dropdown-content {
     position: relative;
+    min-width: 160px;
     height: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
     -webkit-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
@@ -341,10 +341,20 @@ header {
     -o-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
   }
 
-  .dropdown-content::before {
+  .dropdown-child::before {
     content: "";
     position: absolute;
+    width: 160px;
+    height: 4em;
+    top: -50px;
+  }
 
+  .dropdown-child-child::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 4em;
+    right: -80px;
   }
 
   #nav-menu {
@@ -360,6 +370,7 @@ header {
     width: auto;
     grid-auto-columns: auto;
     grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
 
   #nav-menu > .nav-dropdown {
@@ -388,7 +399,20 @@ header {
     -moz-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
     -ms-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
     -o-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
-  }  
+  }
+
+  .dropdown-child > li:hover .dropdown-child-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+    -webkit-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+    -moz-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+    -ms-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+    -o-transition: height 400ms cubic-bezier(0.23, 1, 0.320, 1);
+}
 
   .nav-dropdown:hover .dropdown-content:first-child {
     border-top: none;
