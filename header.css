@@ -344,7 +344,7 @@ header {
   .dropdown-content::before {
     content: "";
     position: absolute;
-    
+
   }
 
   #nav-menu {
@@ -376,8 +376,7 @@ header {
     z-index: 1;
   }
 
-  .nav-dropdown:hover .dropdown-content,
-  .dropdown-content:hover .dropdown-content {
+  .nav-dropdown:hover .dropdown-content {
     border-top: 1px solid var(--seperator);
     display: flex;
     justify-content: center;
