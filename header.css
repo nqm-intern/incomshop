@@ -30,6 +30,7 @@ header {
   width: 100%;
   display: grid;
   row-gap: 16px;
+  grid-template-columns: minmax(150px, 1fr) minmax(0, .5fr) minmax(300px, 2fr);
   grid-template-areas:
     "logo . acc-nav"
     "src-bar src-bar src-bar"
@@ -65,7 +66,10 @@ header {
   padding-right: 1em;
   grid-area: acc-nav;
   display: grid;
-  grid-template-columns: repeat(3, minmax(1rem, 1fr));
+  grid-template-columns: repeat(3, minmax(1rem, 150px));
+  justify-content: end;
+  align-items: center;
+  grid-template-rows: 1fr;
   gap: 10px;
   place-items: center;
 }
@@ -74,18 +78,8 @@ header {
   display: none;
 }
 
-.acc-nav .container:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: -5px;
-  height: 80%;
-  border-right: 1px solid var(--seperator);
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+.acc-nav .container:not(:first-child) {
+  border-left: 1px solid var(--seperator);
 }
 
 .container {
@@ -120,6 +114,7 @@ header {
 }
 
 .searchbar input {
+  font-size: 16px;
   height: 2rem;
   padding: 6px 4px 6px 18px;
   border: 2px solid var(--nav-bar);
@@ -307,7 +302,7 @@ header {
   }
 
   .menu {
-    grid-template-columns: min-content;
+    grid-template-columns: unset;
     grid-auto-columns: auto;
     grid-auto-flow: column;
   }
@@ -370,7 +365,7 @@ header {
     width: auto;
     grid-auto-columns: auto;
     grid-auto-flow: column;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
   }
 
   #nav-menu > .nav-dropdown {
@@ -417,5 +412,19 @@ header {
 
   .nav-dropdown:hover .dropdown-content:first-child {
     border-top: none;
+  }
+
+  .acc-nav .container {
+    justify-content: flex-end;
+  }
+
+  .acc-nav-name {
+    display: block;
+    position: absolute;
+    left: 2rem;
+  }
+
+  .menu > .nav-name {
+    display: none;
   }
 }
