@@ -97,7 +97,7 @@ header {
   display: grid;
 }
 
-.container>div {
+.container > div {
   place-self: center;
 }
 
@@ -235,7 +235,7 @@ header {
   margin-top: 8px;
 }
 
-#menu-toggle:checked+.menu-btn-container .menu-btn::before {
+#menu-toggle:checked + .menu-btn-container .menu-btn::before {
   margin-top: 0;
   transform: rotate(225deg);
   -webkit-transform: rotate(225deg);
@@ -244,11 +244,11 @@ header {
   -o-transform: rotate(225deg);
 }
 
-#menu-toggle:checked+.menu-btn-container .menu-btn {
+#menu-toggle:checked + .menu-btn-container .menu-btn {
   background-color: rgba(255, 255, 255, 0);
 }
 
-#menu-toggle:checked+.menu-btn-container .menu-btn::after {
+#menu-toggle:checked + .menu-btn-container .menu-btn::after {
   margin-top: 0;
   transform: rotate(-225deg);
   -webkit-transform: rotate(-225deg);
