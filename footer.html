@@ -1,0 +1,72 @@
+<footer>
+    <div class="ftr-container">
+        <div class="ftr-left">
+            <div class="ftr-title">
+                商品一覧
+            </div>
+            <div class="ftr-contents">
+                <{section name=i loop=$category_menu.list}>
+                <div><a href="<{$category_menu.list[i].url}>"><{$category_menu.list[i].name}></a></div>
+                <{if $category_menu.list[i].child_category.has_item}>
+                <{section name=j loop=$category_menu.list[i].child_category.list}>
+                <div><a href="<{$category_menu.list[i].child_category.list[j].url}>"><{$category_menu.list[i].child_category.list[j].name}></a></div>
+                <{/section}>
+                <{/if}>
+                <{/section}>
+            </div>
+        </div>
+        <div class="ftr-middle">
+            <div class="ftr-title">
+                お買い物について
+            </div>
+            <div class="ftr-contents">
+                <div class="list">
+                    <div><a href="<{$url.guide}>#ref1">初めての方へ</a></div>
+                    <div><a href="<{$url.guide}>#ref2">ご利用ガイド</a></div>
+                    <div><a href="<{$url.guide}>#ref3">振込先口座</a></div>
+                    <div><a href="<{$url.guide}>#ref4">会員登録情報</a></div>
+                    <div><a href="<{$url.guide}>#ref5">お支払いについて</a></div>
+                    <div><a href="<{$url.guide}>#ref6">配送・送料について</a></div>
+                    <div><a href="<{$url.guide}>#ref7">商品の保証について</a></div>
+                    <div><a href="<{$url.guide}>#ref8.html">プライバシーポリシー</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="ftr-right">
+            <div class="ftr-title">
+                お問い合わせ
+            </div>
+            <div class="ftr-contents">
+                <div class="contact-wrapper">
+                    <div class="icon"><img src="https://gigaplus.makeshop.jp/incomshop/shared-img/tel.png" alt="tel"></div>
+                    <div class="label">
+                        <div class="desc">TEL</div>
+                        <div class="info">095-848-4337</div>
+                    </div>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="icon"><img src="https://gigaplus.makeshop.jp/incomshop/shared-img/fax.png" alt="fax"></div>
+                    <div class="label">
+                        <div class="desc">FAX</div>
+                        <div class="info">095-848-4874</div>
+                    </div>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="icon"><img src="https://gigaplus.makeshop.jp/incomshop/shared-img/mail.png" alt="mail"></div>
+                    <div class="label">
+                        <div class="desc">メールアドレス</div>
+                        <div class="info">info@incom-shop.com</div>
+                    </div>
+                </div>
+                <div class="logo"><a href="<{$url.top}>"><img src="<{$shop.logo_url}>" alt="logo" title="<{$shop.name}>"></a></div>
+                <div class="address">〒852-8136</div>
+                <div class="address">長崎県長崎市家野町5番19号</div>
+                <div class="address">有限会社西九州メディア　宛</div>
+                <div class="business-hours">
+                    <div class="regular">平日 9:30～17:30</div>
+                    <div class="holidays">定休日 土 日 祝</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
