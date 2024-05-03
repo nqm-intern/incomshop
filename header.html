@@ -1,13 +1,13 @@
 <script src="https://kit.fontawesome.com/675d73d547.js" crossorigin="anonymous"></script>
 <header>
-    <div class="logo">
+    <section class="logo">
         <{if $shop.logo_url}>
             <img src="<{$shop.logo_url}>" alt="<{$shop.name}>">
         <{else}>
             <{$shop.name}>
         <{/if}>
-    </div>
-    <div class="acc-nav">
+    </section>
+    <section class="acc-nav">
         <div class="container">
             <div class="acc-nav-img">
                 <i class="fa-classic fa-user fa-2x"></i>
@@ -29,8 +29,8 @@
             <div class="acc-nav-name">カート</div>
             <a class="grid-link" href="<{$url.cart}>"></a>
         </div>
-    </div>
-    <div class="searchbar">
+    </section>
+    <section class="searchbar">
         <div class="container">
             <input class=".search-input" type="text" data-id="<{$search_form.keyword_id}>" placeholder="キーワードを入力"
                 onkeydown="if (event.keyCode == 13) document.getElementById('btnSearch').click()">
@@ -38,8 +38,8 @@
                 <i class="fa fa-search"></i>
             </a>
         </div>
-    </div>
-    <div class="main-nav">
+    </section>
+    <section class="main-nav">
         <div class="container">
             <nav class="nav-bar">
                 <div class="menu">
@@ -84,5 +84,5 @@
                 </div>
             </nav>
         </div>
-    </div>
+    </section>
 </header>
