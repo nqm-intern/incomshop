@@ -1,80 +1,103 @@
 <footer>
-    <section class="member-menu">
-        <div class="footer-title">
-            会員メニュー
-        </div>
-        <div class="member-wrapper">
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-        </div>
-    </section>
-    <section class="guide">
-        <div class="footer-title">
-            ご利用ガイド
-        </div>
-        <div class="guide-wrapper">
-            <a href="<{$url.guide}>">ご利用ガイド</a>
-            <a href="<{$url.guide}>">初めての方へ</a>
-            <a href="<{$url.guide}>">会員メニューについて</a>
-            <a href="<{$url.guide}>">注文について</a>
-            <a href="<{$url.guide}>">お届けについて</a>
-            <a href="<{$url.guide}>">配送について</a>
-            <a href="<{$url.guide}>">保証について</a>
-        </div>
-    </section>
-    <section class="category">
-        <div class="footer-title">
-            カテゴリー
-        </div>
-        <{if $category_menu.has_item}>
-            <div class="category-wrapper">
-                <{section name=i loop=$category_menu.list}>
-                    <div class="item">
-                        <a href="<{$category_menu.list[i].url}>"><{$category_menu.list[i].name}></a>
+    <div class="footer-wrapper">
+        <section class="member">
+            <div class="footer-title">
+                会員メニュー
+            </div>
+            <div class="member-wrapper content-wrapper">
+                <div class="item">
+                    <a href="<{$url.guide}>">ご利用ガイド</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">ご利用ガイド</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">ご利用ガイド</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">ご利用ガイド</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">ご利用ガイド</a>
+                </div>
+            </div>
+        </section>
+        <section class="guide">
+            <div class="footer-title">
+                ご利用ガイド
+            </div>
+            <div class="guide-wrapper content-wrapper">
+                <div class="item">
+                    <a href="<{$url.guide}>">ご利用ガイド</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">初めての方へ</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">会員メニューについて</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">注文について</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">お届けについて</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">配送について</a>
+                </div>
+                <div class="item">
+                    <a href="<{$url.guide}>">保証について</a>
+                </div>
+            </div>
+        </section>
+        <section class="category">
+            <div class="footer-title">
+                カテゴリー
+            </div>
+            <{if $category_menu.has_item}>
+                <div class="category-wrapper content-wrapper">
+                    <{section name=i start=14 max=5 loop=$category_menu.list}>
+                        <div class="item">
+                            <a href="<{$category_menu.list[i].url}>"><{$category_menu.list[i].name}></a>
+                        </div>
+                    <{/section}>
+                </div>
+            <{/if}>
+        </section>
+        <section class="company">
+            <div class="footer-title">
+                連絡事項
+            </div>
+            <div class="company-wrapper">
+                <div class="contact-warpper">
+                    <div class="label">
+                        <div class="label-title">TEL</div>
+                        <div class="label-desc"><{$shop.tel}></div>
                     </div>
-                <{/section}>
-            </div>
-        <{/if}>
-    </section>
-    <section class="company">
-        <div class="footer-title">
-            連絡事項
-        </div>
-        <div class="company-wrapper">
-            <div class="contact-warpper">
-                <div class="label">
-                    <div class="label-title">TEL</div>
-                    <div class="label-desc"><{$shop.tel}>></div>
+                </div>
+                <div class="contact-warpper">
+                    <div class="label">
+                        <div class="label-title">FAX</div>
+                        <div class="label-desc">095-848-4874</div>
+                    </div>
+                </div>
+                <div class="contact-warpper">
+                    <div class="label">
+                        <div class="label-title">メールアドレス</div>
+                        <div class="label-desc">info@incom-shop.com</div>
+                    </div>
                 </div>
             </div>
-            <div class="contact-warpper">
-                <div class="label">
-                    <div class="label-title">FAX</div>
-                    <div class="label-desc">095-848-4874</div>
+            <div class="info-wrapper">
+                <div class="com-logo"><a href="<{$url.top}>"><img src="<{$shop.logo_url}>" alt="logo" title="<{$shop.name}>"></a></div>
+                <div class="address wrap"><{$shop.address}></div>
+                <div class="hours">
+                    <div class="working">平日 9:30~17:30</div>
+                    <div class="holiday">定休日 土 日 祝</div>
                 </div>
             </div>
-            <div class="contact-warpper">
-                <div class="label">
-                    <div class="label-title">メールアドレス</div>
-                    <div class="label-desc">info@incom-shop.com</div>
-                </div>
-            </div>
-        </div>
-        <div class="info-wrapper">
-            <div class="logo"><a href="<{$url.top}>"><img src="<{$shop.logo_url}>" alt="logo" title="<{$shop.name}>"></a></div>
-            <div class="address">〒852-8136</div>
-            <div class="address"><{$shop.address}></div>
-            <div class="hours">
-                <div class="working">平日 9:30~17:30</div>
-                <div class="holiday">定休日 土 日 祝</div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <section class="legal">
         <div class="policy">
             <div class="policy-link">
