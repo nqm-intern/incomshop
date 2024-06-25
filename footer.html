@@ -1,9 +1,11 @@
 <footer>
     <div class="footer-wrapper">
         <section class="member">
-            <div class="footer-title">
-                会員メニュー
-            </div>
+            <input type="checkbox" name="dd-member" id="dd-toggle-1">
+            <label class="footer-title" for="dd-toggle-1">
+                <span>会員メニュー</span>
+                <span class="plus"></span>
+            </label>
             <div class="member-wrapper content-wrapper">
                 <div class="item">
                     <a href="<{$url.guide}>">ご利用ガイド</a>
@@ -23,9 +25,11 @@
             </div>
         </section>
         <section class="guide">
-            <div class="footer-title">
-                ご利用ガイド
-            </div>
+            <input type="checkbox" name="dd-guide" id="dd-toggle-2">
+            <label class="footer-title" for="dd-toggle-2">
+                <span>ご利用ガイド</span>
+                <span class="plus"></span>
+            </label>
             <div class="guide-wrapper content-wrapper">
                 <div class="item">
                     <a href="<{$url.guide}>">ご利用ガイド</a>
@@ -51,9 +55,11 @@
             </div>
         </section>
         <section class="category">
-            <div class="footer-title">
-                カテゴリー
-            </div>
+            <input type="checkbox" name="dd-category" id="dd-toggle-3">
+            <label class="footer-title" for="dd-toggle-3">
+                <span>カテゴリー</span>
+                <span class="plus"></span>
+            </label>
             <{if $category_menu.has_item}>
                 <div class="category-wrapper content-wrapper">
                     <{section name=i start=14 max=5 loop=$category_menu.list}>
