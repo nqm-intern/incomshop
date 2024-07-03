@@ -671,4 +671,49 @@ footer {
 .copy {
     display: grid;
     place-items: center;
+    color: var(--pure-white);
+}
+
+@media screen and (min-width: 768px) {
+    .footer-title {
+        border-top: none;
+    }
+
+    .footer-wrapper {
+        gap: 1em;
+    }
+
+    .plus {
+        display: none;
+    }
+
+    #dd-toggle-1 ~ .content-wrapper,
+    #dd-toggle-2 ~ .content-wrapper,
+    #dd-toggle-3 ~ .content-wrapper {
+        height: fit-content;
+        margin-bottom: 1em;
+    }
+
+    .contact-container {
+        max-width: 350px;
+    }
+
+    .form {
+        margin: 1em 0;
+    }
+
+    .legal {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .policy {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: minmax(0, 1fr);
+    }
 }
