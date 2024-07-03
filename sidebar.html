@@ -1,0 +1,96 @@
+<div class="side-bar">
+    <div class="side-cat">
+        <div class="side-title">カテゴリー</div>
+        <ul class="side-cat-menu">
+            <{section name=i loop=$category_menu.list}>
+            <li class="side-cat-dd">
+                <a href="<{$category_menu.list[i].url}>">
+                    <div class="side-cat-title-wrap">
+                        <div class="side-cat-img">
+                            <img
+                                src="https://gigaplus.makeshop.jp/incomshop/sidebar/<{$category_menu.list[i].code}>.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div class="side-cat-title-text">
+                            <{$category_menu.list[i].name}>
+                        </div>
+                        <{if $category_menu.list[i].child_category.has_item}>
+                        <div class="chevron-right">
+                            <img
+                                src="https://gigaplus.makeshop.jp/incomshop/sidebar/chevron-right.svg"
+                                alt=">"
+                            />
+                        </div>
+                        <{else}>
+                        <div class="chevron-static">
+                            <img
+                                src="https://gigaplus.makeshop.jp/incomshop/sidebar/chevron-right.svg"
+                                alt=">"
+                            />
+                        </div>
+                        <{/if}>
+                    </div>
+                </a>
+                <{if $category_menu.list[i].child_category.has_item}>
+                <div class="side-cat-dd-content">
+                    <{section name=j
+                    loop=$category_menu.list[i].child_category.list}>
+                    <a
+                        href="<{$category_menu.list[i].child_category.list[j].url}>"
+                    >
+                        <div class="side-cat-wrap">
+                            <div class="side-cat-text">
+                                <{$category_menu.list[i].child_category.list[j].name}>
+                            </div>
+                        </div>
+                    </a>
+                    <{/section}>
+                </div>
+                <{/if}>
+            </li>
+            <{/section}>
+        </ul>
+    </div>
+</div>
+
+<section class="sidebar">
+    <{if $category_menu.has_item}>
+        <div class="category-wrapper">
+            <{section name=i start=14 max=5 loop=$category_menu.list}>
+                <input type="checkbox" name="side-category" id="<{$category_menu.list[i].code}>">
+                <label for="<{$category_menu.list[i].code}>">
+                    <span><{$category_menu.list[i].name}></span>
+                    <{if $category_menu.list[i].child_category.has_item}>
+                    <span class="plus"></span>
+                    <{/if}>
+                </label>
+                <{if $category_menu.list[i].child_category.has_item}>
+                <div class="category-content">
+                    <{section name=j loop=$category_menu.list[i].child_category.list}>
+                        <a href="<{$category_menu.list[i].child_category.list[j].url}>">
+                            <div class="item">
+                                <{$category_menu.list[i].child_category.list[j].name}>
+                            </div>
+                            <{if $category_menu.list[i].child_category.list[j].child_category.has_item}>
+                            <span class="chevron"></span>
+                            <{/if}>
+                        </a>
+                        <{if $category_menu.list[i].child_category.list[j].child_category.has_item}>
+                            <div class="category-content">
+                                <{section name=k loop=$category_menu.list[i].child_category.list[j].child_category.list}>
+                                    <a href="<{$category_menu.list[i].child_category.list[j].child_category.list[k].url}>">
+                                        <div class="item">
+                                            <{$category_menu.list[i].child_category.list[j].child_category.list[k].name}>
+                                        </div>
+                                    </a>
+                                <{/section}>
+                            </div>
+                        <{/if}>
+                    <{/section}>
+                </div>
+                <{/if}>
+            <{/section}>
+        </div>
+    <{/if}>
+</section>
